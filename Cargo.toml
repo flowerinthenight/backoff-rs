@@ -1,5 +1,5 @@
 [package]
-name = "backoff"
+name = "backoff_rs"
 version = "0.1.0"
 edition = "2024"
 description = "Jittered exponential backoff implementation in Rust."
