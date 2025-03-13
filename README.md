@@ -9,5 +9,12 @@
 You can use it like so:
 
 ``` rust
-todo
+use spindle::*;
+use std::error::Error;
+use std::{thread, time::Duration};
+
+fn main() -> Result<(), Box<dyn Error>> {
+    // todo
+    Ok(())
+}
 ```
