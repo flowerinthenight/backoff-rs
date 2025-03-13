@@ -9,7 +9,7 @@
 You can use it like so:
 
 ``` rust
-use backoff::*;
+use exp_backoff::*;
 use std::error::Error;
 use std::{thread, time::Duration};
 
