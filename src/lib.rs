@@ -2,6 +2,8 @@
 //! operations that needs to do sleeps with jittered backoff
 //! between retries. The implementation is based on
 //! [https://www.awsarchitectureblog.com/2015/03/backoff.html](https://www.awsarchitectureblog.com/2015/03/backoff.html).
+//!
+//! The API layout is inspired by Google's [`gax/Backoff`](https://pkg.go.dev/github.com/googleapis/gax-go/v2#Backoff.Pause) package for Go.
 
 use rand::Rng;
 use std::cmp;
