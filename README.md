@@ -9,12 +9,30 @@
 You can use it like so:
 
 ``` rust
-use spindle::*;
+use backoff::*;
 use std::error::Error;
 use std::{thread, time::Duration};
 
+fn func_that_can_fail() -> Result<(), Box<dyn Error>> {
+    if true {
+        return Err("some error")?;
+    }
+
+    Ok(())
+}
+
 fn main() -> Result<(), Box<dyn Error>> {
-    // todo
+    let mut bo = BackoffBuilder::new().build();
+    for _ in 0..5 {
+        match func_that_can_fail() {
+            Err(e) => {
+                println!("failed: {:?}, retry...", e);
+                thread::sleep(Duration::from_nanos(bo.pause()));
+            }
+            _ => println!("we're okay"),
+        }
+    }
+
     Ok(())
 }
 ```
