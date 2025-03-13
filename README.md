@@ -1,4 +1,5 @@
 [![main](https://github.com/flowerinthenight/backoff-rs/actions/workflows/main.yml/badge.svg)](https://github.com/flowerinthenight/backoff-rs/actions/workflows/main.yml)
+![crates.io](https://img.shields.io/crates/v/exp_backoff.svg)
 
 ## Overview
 
