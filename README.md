@@ -36,3 +36,9 @@ fn main() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 ```
+
+## Installation
+
+``` sh
+$ cargo add exp_backoff
+```
