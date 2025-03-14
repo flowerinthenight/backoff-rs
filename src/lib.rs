@@ -1,4 +1,4 @@
-//! `backoff` provides jittered backoff values (nanoseconds) for
+//! `exp_backoff` provides jittered backoff values (nanoseconds) for
 //! operations that needs to do sleeps with jittered backoff
 //! between retries. The implementation is based on
 //! [https://www.awsarchitectureblog.com/2015/03/backoff.html](https://www.awsarchitectureblog.com/2015/03/backoff.html).
