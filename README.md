@@ -1,6 +1,6 @@
 [![main](https://github.com/flowerinthenight/backoff-rs/actions/workflows/main.yml/badge.svg)](https://github.com/flowerinthenight/backoff-rs/actions/workflows/main.yml)
 [![crates.io](https://img.shields.io/crates/v/exp_backoff)](https://crates.io/crates/exp_backoff)
-[![docs-rs](https://img.shields.io/docsrs/exp_backoff)](https://docs.rs/exp_backoff/0.1.1/exp_backoff/)
+[![docs-rs](https://img.shields.io/docsrs/exp_backoff)](https://docs.rs/exp_backoff/0.1.2/exp_backoff/)
 
 ## Overview
 
