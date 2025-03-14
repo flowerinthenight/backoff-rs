@@ -70,13 +70,13 @@ impl BackoffBuilder {
         BackoffBuilder::default()
     }
 
-    pub fn initial(mut self, v: u64) -> BackoffBuilder {
-        self.initial_ns = v;
+    pub fn initial_ns(mut self, ns: u64) -> BackoffBuilder {
+        self.initial_ns = ns;
         self
     }
 
-    pub fn max(mut self, v: u64) -> BackoffBuilder {
-        self.max_ns = v;
+    pub fn max_ns(mut self, ns: u64) -> BackoffBuilder {
+        self.max_ns = ns;
         self
     }
 
