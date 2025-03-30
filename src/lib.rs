@@ -1,6 +1,5 @@
-//! `exp_backoff` provides jittered backoff values (nanoseconds) for
-//! operations that needs to do sleeps with jittered backoff
-//! between retries. The implementation is based on
+//! Provides jittered backoff values (nanoseconds) for operations that needs to do
+//! sleeps with jittered backoff between retries. The implementation is based on
 //! [https://www.awsarchitectureblog.com/2015/03/backoff.html](https://www.awsarchitectureblog.com/2015/03/backoff.html).
 //!
 //! The API layout is inspired by Google's [`gax/Backoff`](https://pkg.go.dev/github.com/googleapis/gax-go/v2#Backoff.Pause) package for Go.
@@ -8,9 +7,8 @@
 use rand::Rng;
 use std::cmp;
 
-/// `Backoff` provides jittered backoff values (nanoseconds) for
-/// operations that needs to do sleeps with jittered backoff
-/// between retries.
+/// Provides jittered backoff values (nanoseconds) for operations
+/// that needs to do sleeps with jittered backoff between retries.
 pub struct Backoff {
     /// The initial value of the retry period in ns, defaults to 1s.
     pub initial_ns: u64,
@@ -26,6 +24,7 @@ pub struct Backoff {
 }
 
 impl Backoff {
+    /// Allows for discovery of the builder.
     pub fn builder() -> BackoffBuilder {
         BackoffBuilder::default()
     }
@@ -57,7 +56,7 @@ impl Backoff {
     }
 }
 
-/// `BackoffBuilder` builds an instance of Backoff with default values.
+/// Builds an instance of `Backoff` with default values.
 #[derive(Default)]
 pub struct BackoffBuilder {
     initial_ns: u64,
@@ -66,25 +65,30 @@ pub struct BackoffBuilder {
 }
 
 impl BackoffBuilder {
+    /// Creates a new `BackoffBuilder` instance with default values.
     pub fn new() -> BackoffBuilder {
         BackoffBuilder::default()
     }
 
+    /// Sets the initial backoff time in nanoseconds.
     pub fn initial_ns(mut self, ns: u64) -> BackoffBuilder {
         self.initial_ns = ns;
         self
     }
 
+    /// Sets the maximum backoff time in nanoseconds.
     pub fn max_ns(mut self, ns: u64) -> BackoffBuilder {
         self.max_ns = ns;
         self
     }
 
+    /// Sets the multiplier for the next backoff iteration.
     pub fn multiplier(mut self, v: f64) -> BackoffBuilder {
         self.multiplier = v;
         self
     }
 
+    /// Builds the final `Backoff` object.
     pub fn build(self) -> Backoff {
         Backoff {
             initial_ns: self.initial_ns,
