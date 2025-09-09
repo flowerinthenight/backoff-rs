@@ -1,6 +1,6 @@
 [package]
 name = "exp_backoff"
-version = "0.1.5"
+version = "0.1.6"
 edition = "2024"
 authors = ["flowerinthenight <root@flowerinthenight.com>"]
 description = "Jittered exponential backoff implementation in Rust."
@@ -9,4 +9,4 @@ repository = "https://github.com/flowerinthenight/backoff-rs"
 keywords = ["retry", "backoff", "exponential", "jittered"]
 
 [dependencies]
-rand = "0.9.0"
+rand = "0.9.2"
